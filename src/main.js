@@ -21,7 +21,7 @@ let isPlaying = false;
 let updateTimer;
 
 // Audio element for the player
-let currTrack = document.createElement("audio");
+let currTrack = document.body.appendChild(document.createElement("audio"));
 
 // Initial tracks
 let tracks = [
@@ -29,19 +29,19 @@ let tracks = [
         name:"Them Bones",
         artist:"Alice in Chains",
         image:"https://i.ytimg.com/vi/MNMqyrhPrXY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDMI_ETF0bZ2ZgM0AQccoUzlqbkhA",
-        path:"../ThemBones.mp3",
+        path:"public/audio/ThemBones.mp3",
     },
     {
         name:"As I Am",
         artist:"Dream Theater",
         image:"https://i.ytimg.com/vi/P9Lnan8t0v8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCloR5VYPKZ6kuPz_YoPmE-paa5kQ",
-        path:"../AsIAm.mp3",
+        path:"public/audio/AsIAm.mp3",
     },
     {
         name:"Honor Thy Father",
         artist:"Dream Theater",
         image:"https://i.ytimg.com/vi/P9Lnan8t0v8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCloR5VYPKZ6kuPz_YoPmE-paa5kQ",
-        path:"../HonorThyFather.mp3",
+        path:"public/audio/HonorThyFather.mp3",
     }
 ];
 
@@ -65,7 +65,7 @@ function loadTrack(trackIndex){
     trackArt.style.backgroundImage = "url(" + newTrack.image + ")";
     trackName.textContent = newTrack.name;
     trackArtist.textContent = newTrack.artist;
-    nowPlaying.textContent = "PLAYING " + (trackIndex + 1) + "of " + tracks.length;
+    nowPlaying.textContent = "PLAYING " + (trackIndex + 1) + " of " + tracks.length;
 
     // Setting 1 second interval for updating seek slider
     updateTimer = setInterval(seekUpdate, 1000);
@@ -78,9 +78,9 @@ function loadTrack(trackIndex){
 }
 
 function randomBgColor() {
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
+    let r = Math.floor(Math.random() * 256) + 80;
+    let g = Math.floor(Math.random() * 256) + 80;
+    let b = Math.floor(Math.random() * 256) + 80;
 
     let bgColor = "rgb(" + r + "," + g + "," + b + ")";
 
@@ -152,7 +152,7 @@ function seekUpdate() {
       seekPosition = currTrack.currentTime * (100 / currTrack.duration);
       seekSlider.value = seekPosition;
    
-      // Calculate the time left and the total duration
+      // Calculate the time left and the total duration. The time is given in seconds
       let currentMinutes = Math.floor(currTrack.currentTime / 60);
       let currentSeconds = Math.floor(currTrack.currentTime - currentMinutes * 60);
       let durationMinutes = Math.floor(currTrack.duration / 60);
