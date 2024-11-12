@@ -29,19 +29,19 @@ let tracks = [
         name:"Them Bones",
         artist:"Alice in Chains",
         image:"https://i.ytimg.com/vi/MNMqyrhPrXY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDMI_ETF0bZ2ZgM0AQccoUzlqbkhA",
-        path:"ThemBones.mp3",
+        path:"../ThemBones.mp3",
     },
     {
         name:"As I Am",
         artist:"Dream Theater",
         image:"https://i.ytimg.com/vi/P9Lnan8t0v8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCloR5VYPKZ6kuPz_YoPmE-paa5kQ",
-        path:"./AsIAm.mp3",
+        path:"../AsIAm.mp3",
     },
     {
         name:"Honor Thy Father",
         artist:"Dream Theater",
         image:"https://i.ytimg.com/vi/P9Lnan8t0v8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCloR5VYPKZ6kuPz_YoPmE-paa5kQ",
-        path:"https://open.spotify.com/intl-pt/track/3YRCqOhFifThpSRFJ1VWFM?si=a5cd8f52f6fb4925",
+        path:"../HonorThyFather.mp3",
     }
 ];
 
